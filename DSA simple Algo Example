@@ -1,0 +1,55 @@
+// https://www.w3schools.com/dsa/dsa_algo_simple.php
+ 
+//Fibonacci Series Code-Print First 20 Fibonacii
+#include <iostream>
+using namespace std;
+ 
+// int main() {
+//     int a = 0;
+//     int b = 1;
+ 
+//     for (int i = 0; i < 20; i++) {
+//         cout << a << endl;
+//         int next = a + b;
+//         a = b;
+//         b = next;
+//     }
+ 
+//     return 0;
+// }
+ 
+//Print Fibonacci using recurrsion
+// int count=2;
+// void fibonacci(int a,int b){
+//     while(count<=19){
+//         int newFibo=a+b;
+//         cout<<newFibo<<endl;
+//         a=b;
+//         b=newFibo;
+//         count++;
+//         fibonacci(a,b);
+//     }
+// }
+// int main(){
+//     cout<<"0"<<endl;
+//     cout<<"1"<<endl;
+//     fibonacci(0,1);
+// }
+ 
+//Find the nth Fibonacii number
+// Note: This formula uses a 0-based index. This means that to generate the 20th Fibonacci number, we must write F(19)
+.
+int fibo(int n){
+    if(n<=1){
+        return n;
+    } else{
+        return fibo(n-1)+fibo(n-2);
+    }
+}
+ 
+int main(){
+    int n;
+    cout<<"Enter n:"<<endl;
+    cin>>n;
+    cout<<fibo(n);
+}
