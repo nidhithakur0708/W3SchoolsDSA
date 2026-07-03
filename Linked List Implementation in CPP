@@ -1,0 +1,37 @@
+//https://www.w3schools.com/dsa/dsa_theory_linkedlists_memory.php
+#include <iostream>
+using namespace std;
+ 
+class Node{
+    public: //for main() to access
+    int data;
+    Node* next;
+//Constructor to make a node
+    Node(int val){
+        data=val;
+        next=nullptr;
+    }
+};
+ 
+int main() {
+//make a pointer to make a new node
+//new is a keyword to make a new box
+
+    Node* box1=new Node(10);
+    Node* box2=new Node(20);
+    Node* box3=new Node(30);
+
+    //Linking Node by -> syntax
+    box1->next=box2;
+    box2->next=box3;
+    Node* head=box1;
+    Node* temp=head;
+
+    while(temp!=nullptr){
+        cout<<temp->data<<"->";
+        temp=temp->next;
+    }
+    cout<<"null";
+ 
+    return 0;
+}
