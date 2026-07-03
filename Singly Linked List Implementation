@@ -1,0 +1,28 @@
+//Singly Linked List Implementation
+#include<bits/stdc++.h>
+using namespace std;
+ 
+class Node{
+    public:
+    int data;
+    Node* next;
+    Node(int val){
+        data=val;
+        next=nullptr;
+    }
+};
+ 
+int main(){
+    Node* box1=new Node(10);
+    Node* box2=new Node(20);
+    Node* box3=new Node(30);
+    Node* head=box1;
+    Node* temp=head;
+    box1->next=box2;
+    box2->next=box3;
+    while(temp!=nullptr){
+        cout<<temp->data<<"->";
+        temp=temp->next;
+    }
+    cout<<"null";
+}
