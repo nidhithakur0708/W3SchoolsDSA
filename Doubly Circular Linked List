@@ -1,0 +1,42 @@
+//Doubly Circular Linked List
+#include<bits/stdc++.h>
+using namespace std;
+ 
+class Node{
+    public:
+        int data;
+        Node* next;
+        Node* prev;
+    Node(int val){
+        data=val;
+        next=nullptr;
+        prev=nullptr;
+    }
+};
+int main(){
+    Node* node1=new Node(10);
+    Node* node2=new Node(20);
+    Node* node3=new Node(30);
+
+    node1->next=node2;
+    node2->next=node3;
+    node3->next=node1;
+    node1->prev=node3;
+    node2->prev=node1;
+    node3->prev=node2;
+    Node* temp=node1;
+
+    cout<<"Forward Traversal"<<endl;
+    do{
+        cout<<temp->data<<"->";
+        temp=temp->next;
+    }while(temp!=node1);
+    cout << "(back to start)\n";
+    cout<<"Backward Traversal"<<endl;
+    temp=node3;
+    do{
+        cout<<temp->data<<"->";
+        temp=temp->prev;
+    }while(temp!=node3);
+    cout<< "(back to end)\n";
+}
